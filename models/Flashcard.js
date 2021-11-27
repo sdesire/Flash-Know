@@ -40,4 +40,4 @@ Flashcard.init(
   }
 );
 
-module.exports = Comment;
+module.exports = Flashcard;
