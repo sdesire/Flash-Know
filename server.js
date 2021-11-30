@@ -1,3 +1,15 @@
+const Handlebars = require("handlebars");
+const template = Handlebars.compile("Name: {{name}}");
+console.log(template({ name: "Flashcards" }));
+
+var source = document.getElementById("entry-template").innerHTML;
+var template = template(context);
+var context = {
+  title: "My New Flashcard App",
+  body: "This is our flashcard app!",
+};
+var html = template(context);
+
 //const path = require("path");
 
 //require("dotenv").config();
@@ -19,13 +31,13 @@
 //const hbs = exphbs.create({ helpers });
 
 //const sess = {
-  //secret: process.env.DB_SESSION_SECRET,
- // cookie: { maxAge: 7200000 },
-  //resave: false,
-  //saveUninitialized: true,
-  //store: new SequelizeStore({
-    //db: sequelize,
- // }),
+//secret: process.env.DB_SESSION_SECRET,
+// cookie: { maxAge: 7200000 },
+//resave: false,
+//saveUninitialized: true,
+//store: new SequelizeStore({
+//db: sequelize,
+// }),
 //};
 
 //const app = express();
@@ -45,5 +57,5 @@
 //app.use(routes);
 
 //sequelize.sync({ force: false }).then(() => {
-  //app.listen(PORT, () => console.log("Now listening"));
+//app.listen(PORT, () => console.log("Now listening"));
 //});
