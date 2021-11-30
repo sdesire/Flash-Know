@@ -17,7 +17,8 @@ Category.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      reference: {
+      allowNull: false,
+      references: {
         model: 'user',
         key: 'id',
       },

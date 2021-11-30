@@ -1,20 +1,12 @@
 const router = require('express').Router();
-
-const { User, Category, Flashcard } = require('../../models');
-
-const session = require('express-session');
-
-// const withAuth = require("../../utils/auth");
-
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const { User, Category } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] },
   })
-
     .then(dbUserData => res.json(dbUserData))
-
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -27,20 +19,19 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id,
     },
-
     include: [
       {
         model: Category,
         attributes: ['id'],
       },
-      {
-        model: Flashcard,
-        attributes: ['id'],
-        // include: {
-        //   model: Post,
-        //   attributes: ['title'],
-        // },
-      },
+      // {
+      //   model: Flashcard,
+      //   attributes: ['id'],
+      //   // include: {
+      //   //   model: Post,
+      //   //   attributes: ['title'],
+      //   // },
+      // },
     ],
   })
     .then(dbUserData => {
@@ -57,13 +48,12 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   User.create({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
   })
-
     .then(dbUserData => {
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
@@ -73,14 +63,13 @@ router.post('/', (req, res) => {
         res.json(dbUserData);
       });
     })
-
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', withAuth, (req, res) => {
   User.findOne({
     where: {
       email: req.body.email,
@@ -121,7 +110,6 @@ router.post('/logout', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
   User.update(req.body, {
     individualHooks: true,
-
     where: {
       id: req.params.id,
     },
