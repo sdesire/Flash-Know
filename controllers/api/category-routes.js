@@ -1,8 +1,6 @@
 const router = require('express').Router();
-
 const { Category } = require('../../models');
-
-const session = require('express-session');
+const withAuth = require('../../utils/auth');
 
 // find all categories
 router.get('/', (req, res) => {
