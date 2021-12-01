@@ -1,94 +1,96 @@
-const router = require("express").Router();
-const sequelize = require("../config/connection");
+const router = require('express').Router();
+const sequelize = require('../config/connection');
 
-const { Category, User, Flashcard } = require("../models");
+const { Category, User, Flashcard } = require('../models');
 
-const withAuth = require("../utils/auth");
+const withAuth = require('../utils/auth');
 
-router.get("/", withAuth, (req, res) => {
-  Post.findAll({
+router.get('/', withAuth, (req, res) => {
+  Flashcard.findAll({
     where: {
       user_id: req.session.user_id,
     },
-    attributes: ["id", "post_text", "title", "created_at"],
+    attributes: ['id', 'flashcard_text'],
     include: [
       {
         model: Category,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: ['id', 'user_id'],
         include: {
           model: User,
-          attributes: ["username"],
+          attributes: ['username'],
         },
       },
       {
         model: User,
-        attributes: ["username"],
+        attributes: ['username'],
       },
     ],
   })
-    .then((dbPostData) => {
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
-      res.render("dashboard", { posts, loggedIn: true });
+    .then(dbFlashcardData => {
+      const flashcards = dbFlashcardData.map(flashcard =>
+        dbFlashcardData.get({ plain: true })
+      );
+      res.render('dashboard', { flashcards, loggedIn: true });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.get("/edit/:id", withAuth, (req, res) => {
-  Post.findOne({
+router.get('/edit/:id', withAuth, (req, res) => {
+  Flashcard.findOne({
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "post_text", "title", "created_at"],
+    attributes: ['id', 'flashcard_text'],
     include: [
       {
         model: Category,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: ['id', 'user_id'],
         include: {
           model: User,
-          attributes: ["username"],
+          attributes: ['username'],
         },
       },
       {
         model: User,
-        attributes: ["username"],
+        attributes: ['username'],
       },
     ],
   })
-    .then((dbPostData) => {
-      if (!dbPostData) {
-        res.status(404).json({ message: "No flashcards found with this id" });
+    .then(dbFlashcardData => {
+      if (!dbFlashcardData) {
+        res.status(404).json({ message: 'No flashcards found with this id' });
         return;
       }
 
-      const post = dbPostData.get({ plain: true });
-      res.render("edit-post", { post, loggedIn: true });
+      const flashcards = dbFlashcardData.get({ plain: true });
+      res.render('edit-post', { flashcards, loggedIn: true });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.get("/edituser", withAuth, (req, res) => {
+router.get('/edituser', withAuth, (req, res) => {
   User.findOne({
-    attributes: { exclude: ["password"] },
+    attributes: { exclude: ['password'] },
     where: {
       id: req.session.user_id,
     },
   })
-    .then((dbUserData) => {
+    .then(dbUserData => {
       if (!dbUserData) {
-        res.status(404).json({ message: "No user found with this id" });
+        res.status(404).json({ message: 'No user found with this id' });
         return;
       }
 
       const user = dbUserData.get({ plain: true });
-      res.render("edit-user", { user, loggedIn: true });
+      res.render('edit-user', { user, loggedIn: true });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
