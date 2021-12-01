@@ -17,7 +17,8 @@ Category.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      reference: {
+      allowNull: false,
+      references: {
         model: 'user',
         key: 'id',
       },
@@ -27,7 +28,7 @@ Category.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'catergory',
+    modelName: 'category',
   }
 );
 
