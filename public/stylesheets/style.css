@@ -15,7 +15,7 @@ h1 {
   right: 50px;
   margin-left: 10px;
   border-style: solid;
-  border-color: rgb(255, 123, 0);
+  border-color: rgb(56, 34, 12);
   background-color: whitesmoke;
   border-radius: 25px;
 }
@@ -28,12 +28,13 @@ body {
   font-family: "Lora", serif;
   padding: 10px;
   margin: 10px;
-  outline: black;
+  outline: rgb(56, 34, 12);
   outline-style: ridge;
   background-color: whitesmoke;
   grid-gap: 1em;
   background: url(http://localhost:3001/stylesheets/bookspic.jpg) no-repeat;
   background-size: cover;
+  border-radius: 25px;
 }
 
 header {
@@ -43,6 +44,7 @@ header {
   align-items: center;
   padding: 15px 10%;
   border-radius: 25px;
+  position: sticky;
 }
 
 button .btn-no-style {
@@ -53,7 +55,7 @@ button .btn-no-style {
   border-radius: 5px;
   background-color: whitesmoke;
   border-style: ridge;
-  border-color: black;
+  border-color: rgb(56, 34, 12);
 }
 button:hover {
   background-color: rgba (0, 0, 0, 7);
@@ -77,10 +79,11 @@ button:hover {
 }
 
 .wrapper {
-  background-color: rgb(255, 123, 0);
+  background-color: rgb(56, 34, 12);
   width: 250px;
   padding: 0.5rem;
   border-radius: 25px;
+  display: flex;
 }
 
 img {
@@ -119,7 +122,7 @@ footer {
   margin-right: 10px;
   border-style: solid;
   border-radius: 25px;
-  border-color: rgb(255, 123, 0);
+  border-color: rgb(56, 34, 12);
   background-color: whitesmoke;
 }
 
@@ -149,14 +152,14 @@ nav {
   display: flex;
   border-style: solid;
   border-radius: 25px;
-  border-color: rgb(255, 123, 0);
+  border-color: rgb(56, 34, 12);
   background-color: whitesmoke;
 }
 
 .credits {
   border-style: solid;
   border-radius: 25px;
-  border-color: rgb(255, 123, 0);
+  border-color: rgb(56, 34, 12);
   background-color: whitesmoke;
 }
 
