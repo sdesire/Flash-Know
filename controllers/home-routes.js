@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
       const category = dbCategoryData.map(category =>
         category.get({ plain: true })
       );
-      // pass a single post object into the homepage template
+
       res.render('homepage', {
         category,
         loggedIn: req.session.loggedIn,
@@ -54,7 +54,7 @@ router.get('/category/:id', (req, res) => {
   })
     .then(dbCategoryData => {
       if (!dbCategoryData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No category found with this id' });
         return;
       }
 
@@ -62,7 +62,7 @@ router.get('/category/:id', (req, res) => {
       const category = dbCategoryData.get({ plain: true });
 
       // pass data to template
-      res.render('single-post', {
+      res.render('single-category', {
         category,
         loggedIn: req.session.loggedIn,
       });
