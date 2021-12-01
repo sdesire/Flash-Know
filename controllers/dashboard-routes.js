@@ -1,3 +1,4 @@
+
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 
@@ -18,10 +19,12 @@ router.get('/', withAuth, (req, res) => {
         include: {
           model: User,
           attributes: ['username'],
+
         },
       },
       {
         model: User,
+
         attributes: ['username'],
       },
     ],
@@ -33,6 +36,7 @@ router.get('/', withAuth, (req, res) => {
       res.render('dashboard', { flashcards, loggedIn: true });
     })
     .catch(err => {
+
       console.log(err);
       res.status(500).json(err);
     });
@@ -51,6 +55,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         include: {
           model: User,
           attributes: ['username'],
+
         },
       },
       {
@@ -69,6 +74,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       res.render('edit-post', { flashcards, loggedIn: true });
     })
     .catch(err => {
+
       console.log(err);
       res.status(500).json(err);
     });
@@ -77,6 +83,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
 router.get('/edituser', withAuth, (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
+
     where: {
       id: req.session.user_id,
     },
@@ -84,10 +91,12 @@ router.get('/edituser', withAuth, (req, res) => {
     .then(dbUserData => {
       if (!dbUserData) {
         res.status(404).json({ message: 'No user found with this id' });
+
         return;
       }
 
       const user = dbUserData.get({ plain: true });
+    
       res.render('edit-user', { user, loggedIn: true });
     })
     .catch(err => {

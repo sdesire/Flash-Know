@@ -1,13 +1,17 @@
 const Category = require('./Category');
-// const Flashcards = require('./Flashcard');
+const Flashcard = require('./Flashcard');
 const User = require('./User');
-
-User.hasMany(Category, {
-  foreignKey: 'user_id',
-});
 
 Category.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-module.exports = { User, Category };
+Flashcard.belongsTo(User, {
+  foreignKey: 'user_id',
+});
+
+Flashcard.belongsTo(Category, {
+  foreignKey: 'category_id',
+});
+
+module.exports = { User, Category, Flashcard };
