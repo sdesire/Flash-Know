@@ -5,38 +5,55 @@
 }
 
 body {
-  font-family: "Courier New", Courier, monospace;
-  /* add a google font family */
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding: 10px;
+  margin: 10px;
+  outline: black;
+  outline-style: ridge;
+  background-color: whitesmoke;
+  grid-gap: 1em;
 }
 
 header {
-  background-color: white;
+  background-color: whitesmoke;
 }
 
-button {
+h1 {
+  display: flex;
+  font-size: 50px;
+  position: fixed;
+  top: 50px;
+  left: 10px;
+  margin-left: 10px;
+}
+
+button .btn-no-style {
   padding: 8px;
   outline: none;
   cursor: pointer;
-  border: 1px solid lightgray;
+  border: 1px solid black;
   border-radius: 5px;
   background-color: whitesmoke;
 }
 button:hover {
   background-color: rgba (0, 0, 0, 7);
 }
+
 .container {
   width: 95%;
   margin: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-/* .nav{
-    display:flex;
-    justify-content: space-between;
-    width:100%;
-    margin:auto;
-    padding: 20px 0;
-    background-color:white;
-} */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  padding: 20px 0;
+  background-color: white;
+}
 
 .card {
   width: 380px;
@@ -56,4 +73,44 @@ button:hover {
 
 .card button {
   width: fit-content;
+}
+
+footer {
+  display: flex;
+  font-size: 35px;
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  margin-left: 10px;
+}
+
+.credits {
+  background-color: whitesmoke;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  border-radius: initial;
+  border-color: black;
+  margin: auto;
+  position: fixed;
+  bottom: 50px;
+  left: 10px;
+  margin-left: 10px;
+}
+
+nav {
+  display: flex;
+}
+
+h3 {
+  display: flex;
+  font-size: 20px;
+  margin: auto;
+}
+
+li {
+  font-size: 20px;
+  margin: auto;
+  list-style: initial;
+  padding: 10px;
 }
