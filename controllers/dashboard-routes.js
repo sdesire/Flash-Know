@@ -1,4 +1,3 @@
-
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 
@@ -19,7 +18,6 @@ router.get('/', withAuth, (req, res) => {
         include: {
           model: User,
           attributes: ['username'],
-
         },
       },
       {
@@ -36,7 +34,6 @@ router.get('/', withAuth, (req, res) => {
       res.render('dashboard', { flashcards, loggedIn: true });
     })
     .catch(err => {
-
       console.log(err);
       res.status(500).json(err);
     });
@@ -55,7 +52,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
         include: {
           model: User,
           attributes: ['username'],
-
         },
       },
       {
@@ -74,7 +70,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
       res.render('edit-post', { flashcards, loggedIn: true });
     })
     .catch(err => {
-
       console.log(err);
       res.status(500).json(err);
     });
@@ -96,7 +91,7 @@ router.get('/edituser', withAuth, (req, res) => {
       }
 
       const user = dbUserData.get({ plain: true });
-    
+
       res.render('edit-user', { user, loggedIn: true });
     })
     .catch(err => {
