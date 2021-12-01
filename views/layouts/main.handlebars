@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flash-Know!</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+
   </head>
 
   <body>
     <div class="wrapper">
       <header>
-        <img class="books" src="./stylesheets/bookspic.jpg" alt="books" />
+        <img class="books" src="./stylesheets/bookpages.jpeg" alt="books" />
         <nav>
-          <h1>
-            <a href="/">Flash Know!</a>
-          </h1>
+
           <ul class="nav-links">
+            <h1>
+              <a href="/">Flash Know!</a>
+            </h1>
             {{#if loggedIn}}
               <a href="/dashboard">dashboard</a>
               <button id="logout" class="btn-no-style">logout</button>
@@ -32,7 +34,6 @@
         Thanks for visiting! ❤️ Happy studying!
       </footer>
     </div>
-
     {{#if loggedIn}}
       <script src="/javascript/logout.js"></script>
     {{/if}}
