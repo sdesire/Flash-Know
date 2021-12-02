@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 * {
   padding: 0;
@@ -25,7 +25,7 @@ h1 {
 }
 
 body {
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
   padding: 10px;
   margin: 10px;
   outline: rgb(56, 34, 12);
@@ -56,7 +56,6 @@ button .btn-no-style {
   background-color: whitesmoke;
   border-style: ridge;
   border-color: rgb(56, 34, 12);
-
 }
 button:hover {
   background-color: rgba (0, 0, 0, 7);
@@ -77,7 +76,6 @@ button:hover {
   margin: auto;
   padding: 20px 0;
   background-color: whitesmoke;
-
 }
 
 .wrapper {
@@ -93,7 +91,6 @@ img {
   height: 150px;
   border-radius: 25px;
 }
-
 
 .card {
   width: 380px;
