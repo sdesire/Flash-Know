@@ -7,7 +7,20 @@
   background-color: whitesmoke;
 }
 
+.nav-links {
+  margin: auto;
+  right: 50px;
+  position: fixed;
+  margin-right: 10px;
+  display: flex;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: rgb(56, 34, 12);
+  background-color: whitesmoke;
+}
+
 h1 {
+  border-radius: 25px;
   display: flex;
   font-size: 35px;
   position: fixed;
@@ -17,11 +30,12 @@ h1 {
   border-style: solid;
   border-color: rgb(56, 34, 12);
   background-color: whitesmoke;
-  border-radius: 25px;
 }
 
 .href {
   border-radius: 25px;
+  border-style: solid;
+  border-color: rgb(56, 34, 12);
 }
 
 body {
@@ -75,6 +89,7 @@ button:hover {
   width: 100%;
   margin: auto;
   padding: 20px 0;
+  border-radius: 25px;
   background-color: whitesmoke;
 }
 
@@ -128,45 +143,26 @@ footer {
 
 .credits {
   background-color: whitesmoke;
+  font-size: 10px;
   font-weight: bold;
   color: black;
   display: flex;
-  border-radius: initial;
+  border-style: solid;
+  border-radius: 25px;
   border-color: black;
   margin: auto;
   position: fixed;
   bottom: 50px;
   left: 10px;
   margin-left: 10px;
-}
-
-nav {
-  display: flex;
-}
-
-.nav-links {
-  margin: auto;
-  right: 50px;
-  position: fixed;
   margin-right: 10px;
-  display: flex;
-  border-style: solid;
-  border-radius: 25px;
-  border-color: rgb(56, 34, 12);
-  background-color: whitesmoke;
-}
-
-.credits {
-  border-style: solid;
-  border-radius: 25px;
-  border-color: rgb(56, 34, 12);
-  background-color: whitesmoke;
 }
 
 h3 {
   display: flex;
   font-size: 20px;
   margin: auto;
+  border-radius: 25px;
 }
 
 li {
@@ -174,4 +170,5 @@ li {
   margin: auto;
   list-style: initial;
   padding: 10px;
+  border-radius: 25px;
 }
