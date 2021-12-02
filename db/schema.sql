@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS flashcards;
+
+CREATE DATABASE flashcards;

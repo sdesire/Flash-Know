@@ -1,0 +1,32 @@
+<section>
+    <h2>Create New Flashcard</h2>
+
+    <form class="new-flashcard-form">
+      <div>
+        <label for="category-title">Category Title</label>
+        <input type="text" id="category-title" name="category-title" />
+      </div>
+      <div>
+        <label for="flashcard-question">Question</label>
+        <input type="text" id="flashcard-question" name="flashcard-question" />
+
+        <label for="flashcard-answer">Answer</label>
+        <input type="text" id="flashcard-answer" name="flashcard-answer" />
+      </div>
+      <button type="submit" class="btn">Create</button>
+    </form>
+</section>
+
+    {{#if flashcards.length}}
+    <section>
+      <h2>Your Flashcards</h2>
+      <ol>
+        {{#each flashcards as |flashcard|}}
+        <li>
+          {{> flashcard-info flashcard}}
+        </li>
+        {{/each}}
+      </ol>
+    </section>
+    {{/if}}
+    <script src="/javascript/add-card.js"></script>

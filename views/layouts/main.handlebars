@@ -1,0 +1,50 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flash-Know!</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <img class="books" src="./stylesheets/bookpages.jpeg" alt="books" />
+        <nav>
+
+          <ul class="nav-links">
+            <h1>
+              <a href="/">Flash Know!</a>
+            </h1>
+            {{#if loggedIn}}
+              <a href="/dashboard">dashboard</a>
+              <button id="logout" class="btn-no-style">logout</button>
+            {{else}}
+              <a href="/login">Login 📚</a>
+            {{/if}}
+          </ul>
+        </nav>
+      </header>
+      <main>
+        {{{body}}}
+      </main>
+      <footer>
+        Thanks for visiting! ❤️ Happy studying!
+      </footer>
+    </div>
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+
+    <div class="credits">
+      <h3>Created with ❤️ by:</h3>
+      <li><a href="https://github.com/beamchristian">Christian Beam</a></li>
+      <li><a href="https://github.com/sdesire">Sean Desire</a></li>
+      <li><a href="https://github.com/lvega7">Lissette Vega</a></li>
+      <li><a href="https://github.com/gabriellenoelle">Gabrielle Donald</a></li>
+    </div>
+  </body>
+
+</html>
