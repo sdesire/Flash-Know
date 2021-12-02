@@ -10,7 +10,7 @@ router.get('/', withAuth, (req, res) => {
     where: {
       user_id: req.session.user_id,
     },
-    attributes: ['id', 'flashcard_text'],
+    attributes: ['id', 'question', 'answer'],
     include: [
       {
         model: Category,

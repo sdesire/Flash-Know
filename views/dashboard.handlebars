@@ -8,10 +8,26 @@
         <input type="text" id="flashcard-title" name="flashcard-title" />
       </div>
       <div>
-        <label for="flashcard-text">Text</label>
-        <textarea id="flashcard-text" name="flashcard-text"></textarea>
+        <label for="flashcard-question">question</label>
+        <textarea id="flashcard-question" name="flashcard-question"></textarea>
+
+        <label for="flashcard-answer">answer</label>
+        <textarea id="flashcard-answer" name="flashcard-answer"></textarea>
       </div>
       <button type="submit" class="btn">Create</button>
     </form>
   </div>
   <div class = "column">
+
+    {{#if flashcard.length}}
+    <section>
+      <h2>Your Flashcards</h2>
+      <ol>
+        {{#each flashcards as |flashcard|}}
+        <li>
+          {{> flashcard-info flashcard}}
+        </li>
+        {{/each}}
+      </ol>
+    </section>
+    {{/if}}
