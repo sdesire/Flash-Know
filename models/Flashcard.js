@@ -25,22 +25,6 @@ Flashcard.init(
         len: [1],
       },
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-    category_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'category',
-        key: 'id',
-      },
-    },
   },
   {
     sequelize,
