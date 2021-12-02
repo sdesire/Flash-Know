@@ -7,10 +7,18 @@ Flashcard.init(
   {
     id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    flashcard_text: {
+    question: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
+    },
+    answer: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -27,6 +35,7 @@ Flashcard.init(
     },
     category_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'category',
         key: 'id',
