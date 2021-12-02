@@ -1,26 +1,26 @@
+
 <link rel="stylesheet" href="/stylesheets/style.css" />
-<section class="row">
-  <div class = "column">
+
+<section>
     <h2>Create New Flashcard</h2>
 
     <form class="new-flashcard-form">
       <div>
-        <label for="flashcard-title">Title</label>
-        <input type="text" id="flashcard-title" name="flashcard-title" />
+        <label for="category-title">Category Title</label>
+        <input type="text" id="category-title" name="category-title" />
       </div>
       <div>
-        <label for="flashcard-question">question</label>
-        <textarea id="flashcard-question" name="flashcard-question"></textarea>
+        <label for="flashcard-question">Question</label>
+        <input type="text" id="flashcard-question" name="flashcard-question" />
 
-        <label for="flashcard-answer">answer</label>
-        <textarea id="flashcard-answer" name="flashcard-answer"></textarea>
+        <label for="flashcard-answer">Answer</label>
+        <input type="text" id="flashcard-answer" name="flashcard-answer" />
       </div>
       <button type="submit" class="btn">Create</button>
     </form>
-  </div>
-  <div class = "column">
+</section>
 
-    {{#if flashcard.length}}
+    {{#if flashcards.length}}
     <section>
       <h2>Your Flashcards</h2>
       <ol>
@@ -32,3 +32,4 @@
       </ol>
     </section>
     {{/if}}
+    <script src="/javascript/add-card.js"></script>
