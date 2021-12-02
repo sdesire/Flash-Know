@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Flashcard, Category } = require('../../models');
+const { Flashcard } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // find all flashcards
