@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,600&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -7,33 +6,56 @@
   background-color: whitesmoke;
 }
 
-h1 {
-  display: flex;
-  font-size: 35px;
-  position: fixed;
-  top: 50px;
-  right: 50px;
-  margin-left: 10px;
-  border-style: solid;
-  border-color: rgb(56, 34, 12);
-  background-color: whitesmoke;
+a {
   border-radius: 25px;
+  border-color: lightblue;
 }
 
-.href {
+/*login & dashboard button styling*/
+
+.nav-links {
+  margin: auto;
+  top: 150px;
+  right: 50px;
+  position: fixed;
+  margin-right: 10px;
+  display: flex;
+  border-style: solid;
   border-radius: 25px;
+  padding: 10px;
+  border-color: lightblue;
+  background-color: whitesmoke;
+}
+
+/* homepage button styling */
+
+h1 {
+  position: fixed;
+  border-radius: 25px;
+  display: flex;
+  font-size: 30px;
+  font-style: italic;
+  top: 50px;
+  right: 40px;
+  padding: 10px;
+  margin-left: 10px;
+  border-style: solid;
+  border-color: lightblue;
+  background-color: whitesmoke;
 }
 
 body {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   padding: 10px;
   margin: 10px;
   outline: rgb(56, 34, 12);
   outline-style: ridge;
   background-color: whitesmoke;
   grid-gap: 1em;
-  background: url(http://localhost:3001/stylesheets/bookspic.jpg) no-repeat;
-  background-size: cover;
+  /* background: url(http://localhost:3001/stylesheets/bookspic.jpg) no-repeat; */
+  /* background-color: mediumslateblue; */
+  /* background-size: cover; */
+  background-image: linear-gradient(lavender, aquamarine, lightgreen);
   border-radius: 25px;
 }
 
@@ -55,7 +77,7 @@ button .btn-no-style {
   border-radius: 5px;
   background-color: whitesmoke;
   border-style: ridge;
-  border-color: rgb(56, 34, 12);
+  border-color: lightblue;
 }
 button:hover {
   background-color: rgba (0, 0, 0, 7);
@@ -75,11 +97,12 @@ button:hover {
   width: 100%;
   margin: auto;
   padding: 20px 0;
+  border-radius: 25px;
   background-color: whitesmoke;
 }
 
 .wrapper {
-  background-color: rgb(56, 34, 12);
+  background-color: lightblue;
   width: 250px;
   padding: 0.5rem;
   border-radius: 25px;
@@ -105,7 +128,7 @@ img {
 .card textarea {
   width: 100%;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid lightblue;
 }
 
 .card button {
@@ -118,55 +141,38 @@ footer {
   position: fixed;
   bottom: 50px;
   right: 10px;
+  padding: 5px;
   margin-left: 10px;
   margin-right: 10px;
   border-style: solid;
   border-radius: 25px;
-  border-color: rgb(56, 34, 12);
+  border-color: lightblue;
   background-color: whitesmoke;
 }
 
 .credits {
   background-color: whitesmoke;
+  font-size: 10px;
   font-weight: bold;
   color: black;
   display: flex;
-  border-radius: initial;
-  border-color: black;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: lightblue;
   margin: auto;
+  padding: 5px;
   position: fixed;
   bottom: 50px;
   left: 10px;
   margin-left: 10px;
-}
-
-nav {
-  display: flex;
-}
-
-.nav-links {
-  margin: auto;
-  right: 50px;
-  position: fixed;
   margin-right: 10px;
-  display: flex;
-  border-style: solid;
-  border-radius: 25px;
-  border-color: rgb(56, 34, 12);
-  background-color: whitesmoke;
-}
-
-.credits {
-  border-style: solid;
-  border-radius: 25px;
-  border-color: rgb(56, 34, 12);
-  background-color: whitesmoke;
 }
 
 h3 {
   display: flex;
   font-size: 20px;
   margin: auto;
+  border-radius: 25px;
 }
 
 li {
@@ -174,4 +180,30 @@ li {
   margin: auto;
   list-style: initial;
   padding: 10px;
+  border-radius: 25px;
+}
+
+/* Login and signup page styling */
+
+.login-form,
+.signup-form {
+  border-style: solid;
+  border-color: lightblue;
+  border-radius: 25px;
+  padding: 10px;
+  margin: auto;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-radius: 25px;
+}
+
+input:focus {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 3px solid #555;
 }
