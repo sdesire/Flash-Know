@@ -11,7 +11,14 @@ Flashcard.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    flashcard_text: {
+    question: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
+    },
+    answer: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {

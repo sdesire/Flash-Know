@@ -14,7 +14,8 @@ router.get('/', (req, res) => {
 
 router.post('/', withAuth, (req, res) => {
   Flashcard.create({
-    flashcard_text: req.body.flashcard_text,
+    question: req.body.question,
+    answer: req.body.answer,
     user_id: req.body.user_id,
     category_id: req.body.category_id,
   })
