@@ -5,7 +5,7 @@ async function deleteFormHandler(event) {
     window.location.toString().split('/').length - 1
   ];
   // delete the post with an async function
-  const response = await fetch(`/api/flashcard/${id}`, {
+  const response = await fetch(`/api/flashcards/${id}`, {
     method: 'DELETE',
   });
 
