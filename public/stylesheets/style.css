@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 
 * {
   padding: 0;
@@ -6,6 +6,13 @@
   box-sizing: border-box;
   background-color: whitesmoke;
 }
+
+a {
+  border-radius: 25px;
+  border-color: rgb(56, 34, 12);
+}
+
+/*the below styles the login button*/
 
 .nav-links {
   margin: auto;
@@ -15,6 +22,7 @@
   display: flex;
   border-style: solid;
   border-radius: 25px;
+  padding: 10px;
   border-color: rgb(56, 34, 12);
   background-color: whitesmoke;
 }
@@ -22,24 +30,20 @@
 h1 {
   border-radius: 25px;
   display: flex;
-  font-size: 35px;
+  font-size: 30px;
+  font-style: italic;
   position: fixed;
   top: 50px;
   right: 50px;
+  padding: 10px;
   margin-left: 10px;
   border-style: solid;
   border-color: rgb(56, 34, 12);
   background-color: whitesmoke;
 }
 
-.href {
-  border-radius: 25px;
-  border-style: solid;
-  border-color: rgb(56, 34, 12);
-}
-
 body {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   padding: 10px;
   margin: 10px;
   outline: rgb(56, 34, 12);
