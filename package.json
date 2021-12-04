@@ -25,6 +25,7 @@
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
+    "node-static": "^0.7.11",
     "sequelize": "^6.12.0-alpha.1"
   }
 }

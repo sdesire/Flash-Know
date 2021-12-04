@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,600&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -45,17 +45,15 @@ h1 {
 }
 
 body {
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
   padding: 10px;
   margin: 10px;
   outline: rgb(56, 34, 12);
   outline-style: ridge;
   background-color: whitesmoke;
   grid-gap: 1em;
-  /* background: url(http://localhost:3001/stylesheets/bookspic.jpg) no-repeat; */
-  /* background-color: mediumslateblue; */
-  /* background-size: cover; */
-  background-image: linear-gradient(lavender, aquamarine, lightgreen);
+  background: url(http://localhost:3001/images/bookspic.jpg) no-repeat;
+  background-size: cover;
   border-radius: 25px;
 }
 

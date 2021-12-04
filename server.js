@@ -8,6 +8,8 @@ const PORT = process.env.PORT || 3001;
 const sequelize = require('./config/connection');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const nStatic = require('node-static');
+const fileServer = new nStatic.Server('./public');
 
 const sess = {
   secret: 'Super secret',
@@ -29,5 +31,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(require('./controllers'));
 
 sequelize.sync({ force: false }).then(() => {
+  fileServer.serve;
   app.listen(PORT, () => console.log('Now listening'));
 });
