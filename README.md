@@ -1,4 +1,4 @@
-# Day-to-Day-
+# Flash Know
 [![Generic badge](https://img.shields.io/badge/License-MIT-yellowgreen.svg)](https://shields.io/)
 
 ## Description
