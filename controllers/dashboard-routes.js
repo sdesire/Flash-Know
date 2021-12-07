@@ -27,7 +27,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbFlashcardData => {
       const flashcards = dbFlashcardData.map(flashcard =>
-        dbFlashcardData.get({ plain: true })
+        flashcard.get({ plain: true })
       );
       res.render('dashboard', { flashcards, loggedIn: true });
     })
@@ -84,7 +84,6 @@ router.get('/edituser', withAuth, (req, res) => {
     .then(dbUserData => {
       if (!dbUserData) {
         res.status(404).json({ message: 'No user found with this id' });
-
         return;
       }
 

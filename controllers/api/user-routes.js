@@ -22,16 +22,16 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Category,
-        attributes: ['id'],
+        attributes: ['id', 'title'],
       },
-      // {
-      //   model: Flashcard,
-      //   attributes: ['id'],
-      //   // include: {
-      //   //   model: Post,
-      //   //   attributes: ['title'],
-      //   // },
-      // },
+      {
+        model: Flashcard,
+        attributes: ['id', 'question', 'answer'],
+        include: {
+          model: Category,
+          attributes: ['title'],
+        },
+      },
     ],
   })
     .then(dbUserData => {
