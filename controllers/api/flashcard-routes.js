@@ -17,8 +17,7 @@ router.post('/', withAuth, (req, res) => {
     Flashcard.create({
       question: req.body.question,
       answer: req.body.answer,
-      category_id: req.body.category_id,
-      user_id: req.body.user_id,
+      user_id: req.session.user_id,
     })
       .then(dbFlashcardData => res.json(dbFlashcardData))
       .catch(err => {

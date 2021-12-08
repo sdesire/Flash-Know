@@ -52,7 +52,7 @@ body {
   outline-style: ridge;
   background-color: whitesmoke;
   grid-gap: 1em;
-  background: url(http://localhost:3001/images/bookspic.jpg) no-repeat;
+  background: slategray;
   background-size: cover;
   border-radius: 25px;
 }
