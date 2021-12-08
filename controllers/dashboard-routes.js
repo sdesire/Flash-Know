@@ -65,6 +65,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       }
 
       const flashcards = dbFlashcardData.get({ plain: true });
+      const flashcardsLength = flashcards.length;
       res.render('edit-post', { flashcards, loggedIn: true });
     })
     .catch(err => {
