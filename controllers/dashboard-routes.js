@@ -29,6 +29,7 @@ router.get('/', withAuth, (req, res) => {
       const flashcards = dbFlashcardData.map(flashcard =>
         flashcard.get({ plain: true })
       );
+      console.log(flashcards);
       res.render('dashboard', { flashcards, loggedIn: true });
     })
     .catch(err => {
