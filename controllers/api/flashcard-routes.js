@@ -18,6 +18,7 @@ router.post('/', withAuth, (req, res) => {
       question: req.body.question,
       answer: req.body.answer,
       user_id: req.session.user_id,
+      category_id: req.body.category_id,
     })
       .then(dbFlashcardData => res.json(dbFlashcardData))
       .catch(err => {
