@@ -13,12 +13,12 @@ router.get('/', (req, res) => {
         attributes: ['id', 'question', 'answer', 'user_id', 'category_id'],
         include: {
           model: User,
-          attributes: ['username'],
+          attributes: ['id'],
         },
       },
       {
         model: User,
-        attributes: ['username'],
+        attributes: ['id', 'username'],
       },
     ],
   })
@@ -41,18 +41,18 @@ router.get('/:id', (req, res) => {
         attributes: ['id', 'question', 'answer', 'category_id', 'user_id'],
         include: {
           model: User,
-          attributes: ['username'],
+          attributes: ['id'],
         },
       },
       {
         model: User,
-        attributes: ['username'],
+        attributes: ['id', 'username'],
       },
     ],
   })
     .then(dbCategoryData => {
       if (!dbCategoryData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No category found with this id' });
         return;
       }
       res.json(dbCategoryData);
@@ -67,7 +67,7 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
   Category.create({
     title: req.body.title,
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
   })
     .then(dbCategoryData => res.json(dbCategoryData))
     .catch(err => {
