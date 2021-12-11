@@ -17,14 +17,14 @@ async function newFormHandler(event) {
   });
   if (response.ok) {
     console.log(response.body);
-    question.value = '';
-    answer.value = '';
 
     const flashcardResponse = await fetch(`/api/flashcards`, {
       method: 'POST',
       body: JSON.stringify({
         question,
         answer,
+        category_id,
+        user_id,
       }),
       headers: {
         'Content-Type': 'application/json',
