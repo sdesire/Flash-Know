@@ -26,6 +26,7 @@ router.get('/', withAuth, (req, res) => {
     ],
   })
     .then(dbFlashcardData => {
+      console.log(dbFlashcardData[0]);
       const flashcards = dbFlashcardData.map(flashcard =>
         flashcard.get({ plain: true })
       );

@@ -4,7 +4,23 @@ const withAuth = require('../../utils/auth');
 
 // find all flashcards
 router.get('/', (req, res) => {
-  Flashcard.findAll()
+  Flashcard.findAll({
+    attributes: ['id', 'question', 'answer', 'user_id', 'category_id'],
+    include: [
+      {
+        model: Category,
+        attributes: ['id', 'title', 'user_id'],
+        include: {
+          model: User,
+          attributes: ['username'],
+        },
+      },
+      {
+        model: User,
+        attributes: ['username'],
+      },
+    ],
+  })
     .then(dbFlashcardData => res.json(dbFlashcardData))
     .catch(err => {
       console.log(err);
@@ -13,19 +29,17 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-  if (req.session) {
-    Flashcard.create({
-      question: req.body.question,
-      answer: req.body.answer,
-      user_id: req.session.user_id,
-      category_id: req.body.category_id,
-    })
-      .then(dbFlashcardData => res.json(dbFlashcardData))
-      .catch(err => {
-        console.log(err);
-        res.status(400).json(err);
-      });
-  }
+  Flashcard.create({
+    question: req.body.question,
+    answer: req.body.answer,
+    category_id: req.body.category_id,
+    user_id: req.session.user_id,
+  })
+    .then(dbFlashcardData => res.json(dbFlashcardData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.delete('/:id', withAuth, (req, res) => {

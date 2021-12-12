@@ -9,6 +9,7 @@
 a {
   border-radius: 25px;
   border-color: lightblue;
+  text-decoration: none;
 }
 
 /*login & dashboard button styling*/
@@ -52,7 +53,7 @@ body {
   outline-style: ridge;
   background-color: whitesmoke;
   grid-gap: 1em;
-  background: slategray;
+  background: #f2f3f4;
   background-size: cover;
   border-radius: 25px;
 }
@@ -137,7 +138,7 @@ footer {
   display: flex;
   font-size: 35px;
   position: fixed;
-  bottom: 50px;
+  bottom: 12px;
   right: 10px;
   padding: 5px;
   margin-left: 10px;
@@ -160,7 +161,7 @@ footer {
   margin: auto;
   padding: 5px;
   position: fixed;
-  bottom: 50px;
+  bottom: 12px;
   left: 10px;
   margin-left: 10px;
   margin-right: 10px;
@@ -207,10 +208,9 @@ input:focus {
 }
 
 .show {
-  display:block;
-
+  display: block;
 }
 
 .hide {
-  display:none;
+  display: none;
 }
