@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,600&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -9,6 +9,7 @@
 a {
   border-radius: 25px;
   border-color: lightblue;
+  text-decoration: none;
 }
 
 /*login & dashboard button styling*/
@@ -45,17 +46,15 @@ h1 {
 }
 
 body {
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
   padding: 10px;
   margin: 10px;
   outline: rgb(56, 34, 12);
   outline-style: ridge;
   background-color: whitesmoke;
   grid-gap: 1em;
-  /* background: url(http://localhost:3001/stylesheets/bookspic.jpg) no-repeat; */
-  /* background-color: mediumslateblue; */
-  /* background-size: cover; */
-  background-image: linear-gradient(lavender, aquamarine, lightgreen);
+  background: #f2f3f4;
+  background-size: cover;
   border-radius: 25px;
 }
 
@@ -139,7 +138,7 @@ footer {
   display: flex;
   font-size: 35px;
   position: fixed;
-  bottom: 50px;
+  bottom: 12px;
   right: 10px;
   padding: 5px;
   margin-left: 10px;
@@ -162,7 +161,7 @@ footer {
   margin: auto;
   padding: 5px;
   position: fixed;
-  bottom: 50px;
+  bottom: 12px;
   left: 10px;
   margin-left: 10px;
   margin-right: 10px;
@@ -206,4 +205,12 @@ input:focus {
   padding: 12px 20px;
   box-sizing: border-box;
   border: 3px solid #555;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }

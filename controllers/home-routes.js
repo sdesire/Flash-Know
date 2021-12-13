@@ -1,12 +1,20 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User, Category } = require('../models');
+const { User, Category, Flashcard } = require('../models');
 
 router.get('/', (req, res) => {
   console.log(req.session);
-  Category.findAll({
-    attributes: ['id', 'title'],
+  Flashcard.findAll({
+    attributes: ['id', 'question', 'answer'],
     include: [
+      {
+        model: Category,
+        attributes: ['id', 'user_id'],
+        include: {
+          model: User,
+          attributes: ['username'],
+        },
+      },
       {
         model: User,
         attributes: ['username'],

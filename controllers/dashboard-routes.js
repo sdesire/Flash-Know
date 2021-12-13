@@ -26,9 +26,11 @@ router.get('/', withAuth, (req, res) => {
     ],
   })
     .then(dbFlashcardData => {
+      console.log(dbFlashcardData[0]);
       const flashcards = dbFlashcardData.map(flashcard =>
-        dbFlashcardData.get({ plain: true })
+        flashcard.get({ plain: true })
       );
+      console.log(flashcards);
       res.render('dashboard', { flashcards, loggedIn: true });
     })
     .catch(err => {
@@ -65,6 +67,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       }
 
       const flashcards = dbFlashcardData.get({ plain: true });
+      const flashcardsLength = flashcards.length;
       res.render('edit-post', { flashcards, loggedIn: true });
     })
     .catch(err => {
@@ -84,7 +87,6 @@ router.get('/edituser', withAuth, (req, res) => {
     .then(dbUserData => {
       if (!dbUserData) {
         res.status(404).json({ message: 'No user found with this id' });
-
         return;
       }
 

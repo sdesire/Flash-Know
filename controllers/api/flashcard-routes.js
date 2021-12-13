@@ -1,10 +1,26 @@
 const router = require('express').Router();
-const { Flashcard } = require('../../models');
+const { Flashcard, Category, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // find all flashcards
 router.get('/', (req, res) => {
-  Flashcard.findAll()
+  Flashcard.findAll({
+    attributes: ['id', 'question', 'answer', 'user_id', 'category_id'],
+    include: [
+      {
+        model: Category,
+        attributes: ['id', 'title', 'user_id'],
+        include: {
+          model: User,
+          attributes: ['username'],
+        },
+      },
+      {
+        model: User,
+        attributes: ['username'],
+      },
+    ],
+  })
     .then(dbFlashcardData => res.json(dbFlashcardData))
     .catch(err => {
       console.log(err);
@@ -16,13 +32,13 @@ router.post('/', withAuth, (req, res) => {
   Flashcard.create({
     question: req.body.question,
     answer: req.body.answer,
-    user_id: req.body.user_id,
     category_id: req.body.category_id,
+    user_id: req.session.user_id,
   })
     .then(dbFlashcardData => res.json(dbFlashcardData))
     .catch(err => {
       console.log(err);
-      res.status(400).json(err);
+      res.status(500).json(err);
     });
 });
 

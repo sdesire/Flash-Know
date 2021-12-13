@@ -1,7 +1,15 @@
 # Flash Know
+<<<<<<< HEAD
 [![Generic badge](https://img.shields.io/badge/License-MIT-yellowgreen.svg)](https://shields.io/)
 
 ## Description
+=======
+
+[![Generic badge](https://img.shields.io/badge/License-MIT-yellowgreen.svg)](https://shields.io/)
+
+## Description
+
+>>>>>>> 3f450009291a13dac8beb3614a7fbe262cdd36b7
 Flash Know is an application that allows the user to create a account with a login and password that is stored and hashed with user authentication (express-session, cookies, bcrypt). The user can create flashcards that are organized in user created categories so they can practice whatever subject they would like. The User can also view other users flashcards. This is a full stack application that was created from the ground up and is deployed using Heroku.
 
 ## License
@@ -9,6 +17,10 @@ Flash Know is an application that allows the user to create a account with a log
 This application is covered under the MIT License.
 
 ## Deployment
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3f450009291a13dac8beb3614a7fbe262cdd36b7
 [Deployment](https://pacific-wave-45573.herokuapp.com/)
 
 ## Table of Contents
@@ -19,7 +31,10 @@ This application is covered under the MIT License.
 
 ## Screenshots
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3f450009291a13dac8beb3614a7fbe262cdd36b7
 ## Contributing
 
 For contributing to this project, please follow the guidelines of the:
@@ -32,4 +47,7 @@ For contributing to this project, please follow the guidelines of the:
 [Christian Beam](https://github.com/beamchristian) <br>
 [Lissette Vega](https://github.com/lvega7) <br>
 [Gabrielle Donald](https://github.com/gabriellenoelle)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3f450009291a13dac8beb3614a7fbe262cdd36b7

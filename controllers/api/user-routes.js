@@ -22,16 +22,16 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Category,
-        attributes: ['id'],
+        attributes: ['id', 'title'],
       },
-      // {
-      //   model: Flashcard,
-      //   attributes: ['id'],
-      //   // include: {
-      //   //   model: Post,
-      //   //   attributes: ['title'],
-      //   // },
-      // },
+      {
+        model: Flashcard,
+        attributes: ['id', 'question', 'answer'],
+        include: {
+          model: Category,
+          attributes: ['title'],
+        },
+      },
     ],
   })
     .then(dbUserData => {
@@ -69,7 +69,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router.post('/login', withAuth, (req, res) => {
+router.post('/login', (req, res) => {
   User.findOne({
     where: {
       email: req.body.email,

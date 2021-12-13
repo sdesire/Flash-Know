@@ -1,29 +1,36 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <link rel="stylesheet" href="/stylesheets/style.css" />
 <section class="row">
   <div class = "column">
 =======
 <section>
 >>>>>>> 71577a467164f60729241075452df9266255aab1
-    <h2>Create New Flashcard</h2>
+=======
 
+
+<section>
+>>>>>>> 3f450009291a13dac8beb3614a7fbe262cdd36b7
+    <h2>Create New Flashcard</h2>
     <form class="new-flashcard-form">
-      <div>
+      <div id="flashcardCategory">
         <label for="category-title">Category Title</label>
         <input type="text" id="category-title" name="category-title" />
+        <button type="submit" id="next" class="btn">Next</button>
       </div>
-      <div>
+      <div class="hide" id="flashcardQA">
         <label for="flashcard-question">Question</label>
         <input type="text" id="flashcard-question" name="flashcard-question" />
 
         <label for="flashcard-answer">Answer</label>
         <input type="text" id="flashcard-answer" name="flashcard-answer" />
+      <button type="submit" id="new-category-form" class="btn">Create</button>
+      <button type="submit" id="done" class="btn">Done</button>
       </div>
-      <button type="submit" class="btn">Create</button>
     </form>
 </section>
 
-    {{#if flashcards.length}}
+    {{#if flashcardsLength}}
     <section>
       <h2>Your Flashcards</h2>
       <ol>
