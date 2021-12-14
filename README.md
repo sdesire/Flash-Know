@@ -2,7 +2,7 @@
 [![Generic badge](https://img.shields.io/badge/License-MIT-yellowgreen.svg)](https://shields.io/)
 
 ## Description
-Flash Know is an application that allows the user to create a account with a login and password that is stored and hashed with user authentication (express-session, cookies, bcrypt). The user can create flashcards that are organized in user created categories so they can practice whatever subject they would like. The User can also view other users flashcards. This is a full stack application that was created from the ground up and is deployed using Heroku.
+Flash Know is an application that allows the user to create a account with a login and password that is stored and hashed with user authentication (express-session, cookies, bcrypt). The user can create flashcards that are organized in user created categories so they can practice whatever subject they would like. The User can also view other users flashcards (future development). This is a full stack application that was created from the ground up and is deployed using Heroku.
 
 ## License
 
@@ -18,7 +18,7 @@ This application is covered under the MIT License.
 - [Contributors](#contributors)
 
 ## Screenshots
-
+![Flash Know](https://user-images.githubusercontent.com/88356270/146036009-391683ff-1d53-49cf-9146-2a33db17af89.png)
 
 ## Contributing
 
